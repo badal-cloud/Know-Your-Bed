@@ -22,7 +22,7 @@ app.use(
 
 app.use(
   session({
-    secret: "susucloudarefriends!",
+    secret: process.env.SECRET,
     cookie: {},
     resave: false,
     saveUninitialized: true,
