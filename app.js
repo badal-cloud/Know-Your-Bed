@@ -22,7 +22,7 @@ app.use(
 
 app.use(
   session({
-    secret: process.env.SECRET,
+    secret: "susucloudarefriends!",
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -40,10 +40,11 @@ mongoose.connect("mongodb://localhost:27017/userDB", {
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
+  nickname: String,
   email: String,
   password: String,
   googleId: String,
-  nickname: String,
+  googleName: String,
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -74,8 +75,8 @@ passport.use(
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
-      //console.log(profile);
-      User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      // console.log(profile.displayName);
+      User.findOrCreate({ googleId: profile.id, googleName: profile.displayName}, function (err, user) {
         return cb(err, user);
       });
     }
@@ -110,13 +111,9 @@ app.get("/signup", function (req, res) {
   res.render("signup");
 });
 
-app.get("/feedback", function(req,res){
-  res.render("feedback");
-});
-
 app.get("/user", (req, res) => {
   if (req.isAuthenticated()) {
-    res.render("user", { name: req.user.nickname });
+    res.render("user", { name: req.user.nickname || req.user.googleName});
   } else res.redirect("/login");
 });
 
