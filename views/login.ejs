@@ -25,46 +25,64 @@
         <li>
           <a href="/signup" class="smoothScroll">Signup</a>
         </li>
-        <li><a href="https://covid19.who.int/" class="smoothScroll">Covid-19 Dashboard</a></li>
+        <li>
+          <a href="https://covid19.who.int/" class="smoothScroll"
+            >Covid-19 Dashboard</a
+          >
+        </li>
         <li><a href="/feedback" class="smoothScroll">Get Help</a></li>
       </ul>
     </div>
   </div>
 </section>
 
-
-
 <!-- Login Form -->
 
 <div class="container mt-5">
   <h1><i class="fas fa-sign-in-alt"></i> Login</h1>
-
   <div class="row">
     <div class="col-sm-8">
       <div class="card">
         <div class="card-body">
-
           <!-- Makes POST request to /login route -->
           <form action="/login" method="POST">
             <div class="form-group">
               <label for="email"><i class="fas fa-at"></i> Email</label>
-              <input type="email" class="form-control" name="username">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="email" class="form-control" name="username" />
+              <small id="emailHelp" class="form-text text-muted"
+                >We'll never share your email with anyone else.</small
+              >
             </div>
             <div class="form-group">
               <label for="password"><i class="fas fa-lock"></i> Password</label>
-              <input type="password" class="form-control" name="password">
+              <input type="password" class="form-control" name="password" />
             </div>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Keep Me Logged In</label>
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label class="form-check-label" for="exampleCheck1"
+                >Keep Me Logged In</label
+              >
             </div>
-            <button type="submit" class="section-btn btn btn-default smoothScroll">Login</button>
+            <button
+              type="submit"
+              class="section-btn btn btn-default smoothScroll"
+            >
+              Login
+            </button>
           </form>
-          <br>
+          <small class="form-text text-muted">Or, Login With</small>
+          <button class="btn btn-lg"><a href="/auth/google" role="button"><i class="fab fa-google"></a></i></button>
+          <br />
           <form action="/signup">
-            <small class="form-text text-muted">Or new user? <strong><a href="/signup">Click Here</a></strong> to Sign Up!</small>
-        </form>
+            <small class="form-text text-muted"
+              >Or new user? <strong><a href="/signup">Click Here</a></strong> to
+              Sign Up!</small
+            >
+          </form>
         </div>
       </div>
     </div>
@@ -79,7 +97,6 @@
         </div>
       </div>
     </div> -->
-
   </div>
 </div>
 
