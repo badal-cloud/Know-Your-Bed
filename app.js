@@ -20,15 +20,37 @@ app.use(
   })
 );
 
-app.use(
-  session({
-    secret: "susucloudarefriends!",
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    // cookie: { secure: true }
-  })
-);
+//-momery unleaked---------
+app.set('trust proxy', 1);
+
+app.use(session({
+cookie:{
+    secure: true,
+    maxAge:60000
+       },
+store: new RedisStore(),
+secret: "susucloudarefriends!",
+saveUninitialized: true,
+resave: false
+}));
+
+app.use(function(req,res,next){
+if(!req.session){
+    return next(new Error('Oh no')) //handle error
+}
+next() //otherwise continue
+});
+
+
+// app.use(
+//   session({
+//     secret: "susucloudarefriends!",
+//     cookie: {},
+//     resave: false,
+//     saveUninitialized: true,
+//     // cookie: { secure: true }
+//   })
+// );
 
 app.use(passport.initialize());
 app.use(passport.session());
