@@ -26,7 +26,7 @@
           <a href="/" class="smoothScroll">Logout</a>
         </li>
         <li><a href="#team" class="smoothScroll">Live Updates</a></li>
-        <li><a href="/feedback" class="smoothScroll">Get Help</a></li>
+        <li><a href="#feedback" class="smoothScroll">Get Help</a></li>
       </ul>
     </div>
   </div>
@@ -36,7 +36,9 @@
 <table style="width: 100%;">
   <tr>
     <td>
-      <h4 class="last"><i class="fas fa-user-alt"></i> Username : <%= name %> </h4>
+      <h4 class="last">
+        <i class="fas fa-user-alt"></i> Username : <%= name %>
+      </h4>
     </td>
 
     <td>
@@ -46,36 +48,39 @@
   </tr>
 </table>
 
-<table class="table table-bordered table-hover">
+<div onload="fetch()">
+<table class="table table-bordered table-hover" id="tbval">
   <thead class="thead-dark">
     <tr class="bg-primary">
-      <th scope="col">Nearest Hospitals <i class="fa fa-hospital"></i></th>
+      <th scope="col">State <i class="fas fa-place-of-worship"></i></th>
+      <th scope="col">Total Hospitals <i class="fa fa-hospital"></i></th>
       <th scope="col">Total Beds <i class="fa fa-bed"></i></th>
-      <th scope="col">Occupied <i class="fa fa-bed"></i></th>
-      <th scope="col">Vacant <i class="fa fa-bed"></i></th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Lnjp</th>
-      <td>500</td>
-      <td>800</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th scope="row">Gtb</th>
-      <td>400</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr></tr>
-    <tr>
-      <th scope="row">AIMS</th>
-      <td>400</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
 </table>
+
+</div>
+
+<script>
+async function getHospitalapi() {
+  const jsondata = await fetch(
+    "https://api.rootnet.in/covid19-in/hospitals/beds"
+  );
+  const jsdata = await jsondata.json();
+  var tbval = document.getElementById("tbval");
+  for (var i = 0; i < 35; i++) {
+    var x = tbval.insertRow();
+    x.insertCell(0);
+    tbval.rows[i+1].cells[0].innerHTML = jsdata.data.regional[i+1].state;
+    x.insertCell(1);
+    tbval.rows[i+1].cells[1].innerHTML = jsdata.data.regional[i+1].totalHospitals;
+    x.insertCell(2);
+    tbval.rows[i+1].cells[2].innerHTML = jsdata.data.regional[i+1].totalBeds;
+  }
+}
+getHospitalapi();
+</script>
+
+
 
 <%- include('partials/footer') %>
