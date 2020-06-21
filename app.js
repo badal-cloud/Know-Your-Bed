@@ -103,6 +103,10 @@ app.get(
   }
 );
 
+app.get("/feedback", (req, res)=>{
+  res.render("feedback");
+});
+
 app.get("/login", function (req, res) {
   res.render("login");
 });
