@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const session = require("express-session");
-const MongoStore = require('connect-mongo')(session);
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
@@ -21,14 +20,6 @@ app.use(
   })
 );
 
-<<<<<<< HEAD
-app.use(function(req,res,next){
-if(!req.session){
-    return next(new Error('Oh no')) //handle error
-}
-next() //otherwise continue
-});
-
 app.use(
   session({
     secret: "susucloudarefriends!",
@@ -38,16 +29,6 @@ app.use(
     // cookie: { secure: true }
   })
 );
-=======
-app.use(session({
-  secret: "susucloudarefriends!",
-  store: new MongoStore({ mongooseConnection: mongoose.connection }),
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}));
-
->>>>>>> 6aac39895bc0a028bd4715040d40ef3696227494
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -179,5 +160,5 @@ app.post("/login", (req, res) => {
 });
 
 app.listen(3000, function () {
-  console.log("Server has started successfully at port 3000");
+  console.log("Server started on port 3000");
 });
