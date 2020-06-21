@@ -1,0 +1,79 @@
+<%- include('partials/header') %>
+
+<!-- MENU -->
+<section class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target=".navbar-collapse"
+        >
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+  
+        <!-- lOGO TEXT HERE -->
+        <a href="/" class="navbar-brand">Know Ur Bed <i class="fa fa-bed"></i></a>
+      </div>
+  
+      <!-- MENU LINKS -->
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/" class="smoothScroll">Home</a></li>
+          <li>
+            <a href="/" class="smoothScroll">Logout</a>
+          </li>
+          <li><a href="#team" class="smoothScroll">Live Updates</a></li>
+          <li><a href="#feedback" class="smoothScroll">Get Help</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!--user name and table-->
+  <table style="width: 100%;">
+      <tr>
+  <td><h4 class="last"><i class="fas fa-user-alt"></i> Username:</h4></td>
+  
+  <td><h4 class="right"><i class="fas fa-map-marker"></i> Location:</h4><td>
+  
+      </tr>
+  </table>
+
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr class="bg-primary">
+        <th scope="col">Nearest Hospitals <i class="fa fa-hospital"></i></th>
+        <th scope="col">Total Beds <i class="fa fa-bed"></i></th>
+        <th scope="col">Occupied <i class="fa fa-bed"></i></th>
+        <th scope="col">Vacant <i class="fa fa-bed"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Lnjp</th>
+        <td>500</td>
+        <td>800</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th scope="row">Gtb</th>
+        <td>400</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <tr>
+            <th scope="row">AIMS</th>
+            <td>400</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+</table>
+         
+    
+
+  <%- include('partials/footer') %>  
