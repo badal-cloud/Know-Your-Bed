@@ -74,7 +74,7 @@ passport.use(
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
-      console.log(profile);
+      //console.log(profile);
       User.findOrCreate({ googleId: profile.id }, function (err, user) {
         return cb(err, user);
       });
@@ -108,6 +108,10 @@ app.get("/login", function (req, res) {
 
 app.get("/signup", function (req, res) {
   res.render("signup");
+});
+
+app.get("/feedback", function(req,res){
+  res.render("feedback");
 });
 
 app.get("/user", (req, res) => {
