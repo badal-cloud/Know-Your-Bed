@@ -4,7 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const session = require("cookie-session");
+const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
@@ -19,28 +19,6 @@ app.use(
     extended: true,
   })
 );
-
-//-momery unleaked---------
-app.set('trust proxy', 1);
-
-// app.use(session({
-// cookie:{
-//     secure: true,
-//     maxAge:60000
-//        },
-// store: new RedisStore(),
-// secret: "susucloudarefriends!",
-// saveUninitialized: true,
-// resave: false
-// }));
-
-// app.use(function(req,res,next){
-// if(!req.session){
-//     return next(new Error('Oh no')) //handle error
-// }
-// next() //otherwise continue
-// });
-
 
 app.use(
   session({
