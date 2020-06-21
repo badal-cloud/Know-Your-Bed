@@ -397,6 +397,15 @@ label.star:before {
   content: '\f006';
   font-family: FontAwesome;
 }
+.feed{
+  background-color: #37bdf1;
+  
+}
+
+.feed-img{
+  width: 10rem;
+  
+}
 
 /*--------contact--------*/
 .contact{
