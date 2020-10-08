@@ -13,8 +13,6 @@
 
 </details>
 
-## -------------------------------------------------------------
-
 <details>
   <summary>This is second Page Auth2.0 Signup page.</summary>
   
@@ -24,16 +22,12 @@ You signup with help of enter the entries and also with the help of Google.
 
 </details>
 
-## --------------------------------------------------------------
-
 <details>
   <summary>This third page Login page.</summary>
 
 ![2](https://user-images.githubusercontent.com/56346262/85222431-bfde9a80-b36f-11ea-94d2-ee783a46a34e.png)
 
 </details>
-
-## ---------------------------------------------------------------
 
 <details>
   <summary>If you succesfully login that you see User Page of our project.</summary>
@@ -44,8 +38,6 @@ We are used the state Govt. API Inside the user Page the updated list of States 
 ![5](https://user-images.githubusercontent.com/56346262/85222517-970ad500-b370-11ea-82db-ab84fb811388.png)
 
 </details>
-
-## ----------------------------------------------------------------
 
 ![6](https://user-images.githubusercontent.com/56346262/85222542-cd485480-b370-11ea-963b-00d7ddae37e7.png)
 
