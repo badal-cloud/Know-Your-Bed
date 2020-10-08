@@ -39,8 +39,6 @@ We are used the state Govt. API Inside the user Page the updated list of States 
 
 </details>
 
-![6](https://user-images.githubusercontent.com/56346262/85222542-cd485480-b370-11ea-963b-00d7ddae37e7.png)
-
 <details>
   <summary>This is Last page GET HELP.</summary>
 
